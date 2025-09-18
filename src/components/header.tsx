@@ -1,10 +1,21 @@
 import { Bedtime, LightMode } from "@mui/icons-material";
-import { AppBar, IconButton, Stack, Typography, useTheme } from "@mui/material";
+import {
+  AppBar,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  type Theme,
+} from "@mui/material";
 import { TopNav } from "./topNav";
+import { darkTheme, lightTheme } from "../theme/theme";
 
-export const Header: React.FC<{ props: number[] }> = ({ props }) => {
-  props.push(1);
+export const Header: React.FC<{
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+}> = ({ setTheme }) => {
   const theme = useTheme();
+  const disableName = useMediaQuery("(min-width:400px)");
   return (
     <AppBar
       sx={{
@@ -22,18 +33,25 @@ export const Header: React.FC<{ props: number[] }> = ({ props }) => {
         sx={{ position: "relative", height: "100%" }}
       >
         <TopNav props="" />
-        <Typography
-          variant={"h4"}
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+        {disableName && (
+          <Typography
+            variant={"h4"}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            Nick Spoto
+          </Typography>
+        )}
+        <IconButton
+          color="inherit"
+          onClick={() => {
+            setTheme(theme.palette.mode === "light" ? darkTheme : lightTheme);
           }}
         >
-          Nick Spoto
-        </Typography>
-        <IconButton color="inherit">
           {/* make this take the actual theme */}
           {theme.palette.mode === "light" ? <Bedtime /> : <LightMode />}
         </IconButton>

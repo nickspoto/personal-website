@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import { Bio } from "./bio";
 
 export const Body: React.FC<{ props: string }> = () => {
   const stuff = [
@@ -18,6 +19,7 @@ export const Body: React.FC<{ props: string }> = () => {
         padding: "10px",
       }}
     >
+      <Bio />
       <Typography>All material goes here</Typography>
       {stuff.map((stuff) => (
         <>
