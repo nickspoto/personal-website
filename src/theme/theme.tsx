@@ -9,6 +9,7 @@ export const lightTheme = createTheme({
     secondary: {
       main: "#ffba39ff",
     },
+    //add a font size breakpoint for mobile devices
   },
 });
 

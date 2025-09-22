@@ -8,7 +8,6 @@ export const Bio: React.FC = () => {
   return (
     //these can all be simplified with a bio wrapper that takes an isMobile prop
     <Stack
-      padding={isMobile ? "20px" : "45px 90px"}
       direction={isMobile ? "column" : "row"}
       spacing={isMobile ? 5 : 10} //horiz space on non-mobile should be larger than mobile vertical
     >

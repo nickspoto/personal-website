@@ -1,35 +1,15 @@
-import { Stack, Typography, useTheme } from "@mui/material";
+import { Divider, Typography, useMediaQuery } from "@mui/material";
 import { Bio } from "./bio";
+import { BodyContainer } from "./styles";
 
-export const Body: React.FC<{ props: string }> = () => {
-  const stuff = [
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  ];
-  const theme = useTheme();
+export const Body = () => {
+  const isMobile = !useMediaQuery("(min-width:1000px)");
+
   return (
-    <Stack
-      maxWidth={"100%"}
-      height={"100%"}
-      //I want to change these colors to be a little more muted - like a dark/light gray
-      color={theme.palette.text.primary}
-      bgcolor={theme.palette.background.paper}
-      flexGrow={1}
-      sx={{
-        overflowY: "auto", //scrollable body
-        padding: "10px",
-      }}
-    >
+    <BodyContainer isMobile={isMobile} spacing={5}>
       <Bio />
-      <Typography>All material goes here</Typography>
-      {stuff.map((stuff) => (
-        <>
-          {stuff + "\n"}
-          <br></br>
-        </>
-      ))}
-    </Stack>
+      <Divider />
+      <Typography>More material goes after here</Typography>
+    </BodyContainer>
   );
 };
