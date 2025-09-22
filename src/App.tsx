@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ThemeProvider } from "@mui/material";
 import { Header } from "./components/header/header";
 import { Body } from "./components/body";
+import "./styles/global.css";
 import { lightTheme } from "./theme/theme";
 import { AppContainer } from "./styles";
-import "./styles/global.css";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
