@@ -48,7 +48,7 @@ export const Bio: React.FC = () => {
           science in Cornell University's College of Engineering, with a minor
           in AI. I am interested in web development and software engineering,
           and I want to work in defense-based software and frontend/backend
-          development. Please feel free to reach out through my email/phone, or
+          development. Please feel free to reach out through my email, phone, or
           the form below.
         </Typography>
         {/* make a link to a contact form area */}
