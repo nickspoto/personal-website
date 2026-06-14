@@ -1,5 +1,6 @@
-import { Stack, Typography, useMediaQuery } from "@mui/material";
-import { HeroWrapper } from "./styles";
+import { Link, Stack, Tooltip, Typography, useMediaQuery } from "@mui/material";
+import { HeroWrapper } from "../styles";
+import { Email, GitHub, Phone } from "@mui/icons-material";
 
 export const Bio: React.FC = () => {
   const isMobile = !useMediaQuery("(min-width:1000px)");
@@ -14,16 +15,31 @@ export const Bio: React.FC = () => {
       <Stack alignItems={"center"}>
         <HeroWrapper />
         {/* change these into clickable icon buttons with links */}
-        <Typography paddingTop={"10px"} textAlign={"center"}>
-          <strong>Github: </strong>
-          github.com/nickspoto
-          <br />
-          <strong>Email: </strong>
-          njs232@cornell.edu
-          <br />
-          <strong>Phone: </strong>
-          (703) 615-0166
-        </Typography>
+        <Stack
+          direction={"row"}
+          gap={2}
+          paddingTop={"20px"}
+          textAlign={"center"}
+        >
+          <Tooltip title="github.com/nickspoto">
+            <Link href="https://github.com/nickspoto" color="textPrimary">
+              <GitHub />
+            </Link>
+          </Tooltip>
+          <Tooltip title="njs232@cornell.edu">
+            <Link
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=njs232@cornell.edu"
+              color="textPrimary"
+            >
+              <Email />
+            </Link>
+          </Tooltip>
+          <Tooltip title="(703) 615-0166">
+            <Link href="tel:7036150166" color="textPrimary">
+              <Phone />
+            </Link>
+          </Tooltip>
+        </Stack>
       </Stack>
       <Stack spacing={2} textAlign={isMobile ? "center" : "left"}>
         <Typography variant={"h2"}>About Me</Typography>

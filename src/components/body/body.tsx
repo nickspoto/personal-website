@@ -1,6 +1,7 @@
-import { Divider, Typography, useMediaQuery } from "@mui/material";
+import { Divider, Typography, useMediaQuery, Stack } from "@mui/material";
 import { Bio } from "./bio";
-import { BodyContainer } from "./styles";
+import { BodyContainer } from "../styles";
+import { ResumeGraph } from "./resumeGraph";
 
 export const Body = () => {
   const isMobile = !useMediaQuery("(min-width:1000px)");
@@ -10,6 +11,9 @@ export const Body = () => {
       <Bio />
       <Divider />
       <Typography>More material goes after here</Typography>
+      <Stack>
+        <ResumeGraph />
+      </Stack>
     </BodyContainer>
   );
 };

@@ -11,11 +11,9 @@ export const HeroWrapper = styled(Box)(({ theme }) => ({
 
 export const BodyContainer = styled(Stack, {
   shouldForwardProp: (prop) => prop !== "isMobile",
-})<{ isMobile: boolean }>(({ theme, isMobile }) => ({
+})<{ isMobile: boolean }>(({ isMobile }) => ({
   maxWidth: "100%",
   height: "100%",
-  color: theme.palette.text.primary,
-  backgroundColor: theme.palette.background.paper,
   flexGrow: 1,
   overflowY: "auto", //scrollable body
   padding: isMobile ? `20px` : `45px`,

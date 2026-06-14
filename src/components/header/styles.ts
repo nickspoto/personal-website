@@ -1,5 +1,5 @@
 import { Menu } from "@mui/icons-material";
-import { AppBar, Button, Stack, styled, Typography } from "@mui/material";
+import { AppBar, Button, Paper, Stack, styled } from "@mui/material";
 
 export const HeaderAppBar = styled(AppBar)(() => ({
   position: "static",
@@ -16,7 +16,9 @@ export const NavAlign = styled(Stack)(() => ({
   height: "100%",
 }));
 
-export const CenteredName = styled(Typography)(() => ({
+export const CenteredName = styled(Stack)(() => ({
+  gap: "20px",
+  alignItems: "center",
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -33,4 +35,16 @@ export const AnimatedMenuIcon = styled(Menu, {
 export const MenuListButton = styled(Button)(() => ({
   color: "inherit",
   padding: "10px 5px",
+}));
+
+export const InitialsIcon = styled(Paper)(({ theme }) => ({
+  width: 50,
+  height: 50,
+  borderRadius: 6,
+  alignContent: "center",
+  justifyContent: "center",
+  align: "center",
+  background: `linear-gradient(to right bottom, ${theme.palette.secondary.dark}, ${theme.palette.grey[200]})`,
+  cursor: "default",
+  userSelect: "none",
 }));
