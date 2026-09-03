@@ -1,15 +1,14 @@
 import { Bedtime, LightMode } from "@mui/icons-material";
 import {
   IconButton,
-  Stack,
   Typography,
   useMediaQuery,
   useTheme,
   type Theme,
 } from "@mui/material";
 import { TopNav } from "./topNav";
-import { darkTheme, lightTheme } from "../../theme/theme";
-import { CenteredName, HeaderAppBar, InitialsIcon, NavAlign } from "./styles";
+import { darkTheme, lightTheme } from "../../../theme/theme";
+import { CenteredName, HeaderAppBar, NavAlign } from "./styles";
 
 export const Header: React.FC<{
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;

@@ -1,20 +1,28 @@
 import { useState } from "react";
-import { ThemeProvider } from "@mui/material";
-import { Header } from "./components/header/header";
-import { Body } from "./components/body/body";
+import { ThemeProvider } from "@mui/material/styles";
+import { Header } from "./components/alt/header/header";
+import { Body } from "./components/alt/body/body";
 import "./styles/global.css";
 import { lightTheme } from "./theme/theme";
 import { AppContainer } from "./styles";
-import { Footer } from "./components/footer";
+import { Footer } from "./components/alt/footer";
+import { Room } from "./components/room/room";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
+  const isDev = true;
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <AppContainer direction="column">
-        <Header setTheme={setTheme} />
-        <Body />
-        <Footer />
+        {isDev ? (
+          <Room />
+        ) : (
+          <>
+            <Header setTheme={setTheme} />
+            <Body />
+            <Footer />
+          </>
+        )}
       </AppContainer>
     </ThemeProvider>
   );
